@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Serve | Diagenyx Geoscience Consulting</title>
+    <meta name="description" content="Diagenyx serves exploration teams, operators, investors, tribal entities, and technical firms across oil & gas, geothermal, and critical minerals.">
+    
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            color: #5A2A27;
+            background-color: #F5F1E8;
+            line-height: 1.6;
+        }
+        
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 20px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #5A2A27;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #C45911;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #5A2A27;
+            margin: 3px 0;
+        }
+        
+        /* ==================== HEADER ==================== */
+        .page-header {
+            padding: 140px 20px 60px;
+            text-align: center;
+            background: #F5F1E8;
+        }
+        
+        .page-header h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: #5A2A27;
+            margin-bottom: 15px;
+        }
+        
+        .header-line {
+            width: 200px;
+            height: 2px;
+            background: #C45911;
+            margin: 0 auto 30px;
+        }
+        
+        .intro-text {
+            font-size: 17px;
+            color: #4A6B72;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* ==================== ACCORDION SECTION ==================== */
+        .accordion-section {
+            max-width: 900px;
+            margin: 60px auto 80px;
+            padding: 0 20px;
+        }
+        
+        /* Individual accordion item */
+        .accordion-item {
+            background: #FFFFFF;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Accordion header (clickable) */
+        .accordion-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background: #F5F1E8;
+        }
+        
+        .accordion-item.active .accordion-header {
+            border-left-color: #C45911;
+            background: #F5F1E8;
+        }
+        
+        .accordion-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5A2A27;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Geometric icon for each client type */
+        .client-icon {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+        
+        /* Different colors for each client type */
+        .accordion-item:nth-child(1) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #C45911; 
+        }
+        .accordion-item:nth-child(2) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #E89B44; 
+        }
+        .accordion-item:nth-child(3) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #3B9B7D; 
+        }
+        .accordion-item:nth-child(4) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #4A6B72; 
+        }
+        .accordion-item:nth-child(5) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #5A2A27; 
+        }
+        .accordion-item:nth-child(6) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #C45911; 
+        }
+        .accordion-item:nth-child(7) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #E89B44; 
+        }
+        .accordion-item:nth-child(8) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #3B9B7D; 
+        }
+        .accordion-item:nth-child(9) .client-icon { 
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #4A6B72; 
+        }
+        
+        /* Toggle arrow */
+        .accordion-toggle {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid #4A6B72;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .accordion-item.active .accordion-toggle {
+            transform: rotate(180deg);
+            border-top-color: #C45911;
+        }
+        
+        /* Accordion content (expandable) */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding: 0 30px 30px 30px;
+        }
+        
+        .accordion-content p {
+            font-size: 15px;
+            color: #4A6B72;
+            line-height: 1.8;
+            padding-left: 27px; /* Aligns with title after icon */
+        }
+        
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: #5A2A27;
+            color: #F5F1E8;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #E89B44;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #F5F1E8;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 25px;
+            background: #C45911;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: #E89B44;
+        }
+        
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 32px;
+            }
+            
+            .intro-text {
+                font-size: 15px;
+            }
+            
+            .accordion-header {
+                padding: 20px;
+            }
+            
+            .accordion-title {
+                font-size: 18px;
+            }
+            
+            .accordion-item.active .accordion-content {
+                padding: 0 20px 20px 20px;
+            }
+            
+            .accordion-content p {
+                font-size: 14px;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="images/diagenyx-logo-nav.png" alt="Diagenyx Geoscience Consulting">
+            </a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="who-we-serve.html">Who We Serve</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <h1>Who We Serve</h1>
+        <div class="header-line"></div>
+        <p class="intro-text">
+            Diagenyx works with technical and business teams who need rigorous, independent geoscience to make high-stakes subsurface decisions. Our clients span the full resource development lifecycle — from early exploration through producing asset management and transaction support.
+        </p>
+    </header>
+
+    <!-- ACCORDION SECTION -->
+    <section class="accordion-section">
+        
+        <!-- Exploration Teams -->
+        <div class="accordion-item active">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Exploration Teams
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Evaluating new plays, prospects, or resource fairways across oil & gas, geothermal, CCUS, and critical minerals. We help define what's there, what it takes to develop it, and what the risk profile looks like.
+                </p>
+            </div>
+        </div>
+
+        <!-- Asset & Resource Developers -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Asset & Resource Developers
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Advancing a known resource toward production or utilization. We provide the technical foundation needed to attract capital, satisfy investors, and move projects forward with confidence.
+                </p>
+            </div>
+        </div>
+
+        <!-- Operators -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Operators
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Actively drilling, completing, or managing producing assets who need fractured reservoir insight, well planning support, or reservoir quality analysis integrated into ongoing operations.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical & Engineering Firms -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Technical & Engineering Firms
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Leading reservoir engineering, geomechanics, and multidisciplinary consulting shops that need deep geoscience expertise on a project or contract basis. We integrate cleanly into existing technical teams.
+                </p>
+            </div>
+        </div>
+
+        <!-- Investment & Transaction Teams -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Investment & Transaction Teams
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Private equity, venture capital, family offices, and lenders requiring independent technical due diligence and A&D support. We speak the language of deals and deliver assessments built for decision-makers, not just technical audiences.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tribal & Sovereign Energy Entities -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Tribal & Sovereign Energy Entities
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Tribes and sovereign nations evaluating or developing subsurface resources on their lands. Diagenyx brings both the technical rigor and the stakeholder awareness these engagements require, including familiarity with federal programs, grant landscapes, and community development goals.
+                </p>
+            </div>
+        </div>
+
+        <!-- Universities & National Laboratories -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Universities & National Laboratories
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Academic and government research partners working on geothermal, CCUS, critical minerals, or subsurface characterization programs. We contribute applied industry expertise and bridge the gap between research and real-world resource development.
+                </p>
+            </div>
+        </div>
+
+        <!-- Independent Mineral Landowners -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <div class="client-icon"></div>
+                    Independent Mineral Landowners
+                </div>
+                <div class="accordion-toggle"></div>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Seeking an independent technical perspective on what's beneath their acreage — whether evaluating a lease offer, assessing development activity, or understanding the long-term potential of their mineral interests.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#top" class="back-to-top">Back to Top</a>
+        <p><a href="index.html">Return to Home</a> | <a href="index.html#contact">Contact</a></p>
+        <p style="margin-top: 20px; font-size: 12px; color: #C9A879;">© 2025 Diagenyx. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+        
+        // Accordion toggle function
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const wasActive = item.classList.contains('active');
+            
+            // Optional: Close all other accordions (comment out to allow multiple open)
+            document.querySelectorAll('.accordion-item').forEach(accordion => {
+                accordion.classList.remove('active');
+            });
+            
+            // Toggle clicked item
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
